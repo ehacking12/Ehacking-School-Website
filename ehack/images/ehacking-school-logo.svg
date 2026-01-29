@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="logoShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#logoGrad1)" opacity="0.1"/>
+
+  <!-- Shield Icon (Main Logo) -->
+  <g filter="url(#logoShadow)">
+    <!-- Outer Shield -->
+    <path d="M 50 20 L 50 20 L 30 35 L 30 60 Q 30 80 50 90 Q 70 80 70 60 L 70 35 Z" 
+          fill="url(#logoGrad1)" stroke="#1e40af" stroke-width="1.5"/>
+    
+    <!-- Inner Shield Accent -->
+    <path d="M 50 25 L 35 38 L 35 60 Q 35 77 50 85 Q 65 77 65 60 L 65 38 Z" 
+          fill="none" stroke="#2563eb" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Lock Icon Inside Shield -->
+    <g fill="white">
+      <!-- Lock Body -->
+      <rect x="42" y="45" width="16" height="18" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Lock Shackle -->
+      <path d="M 45 45 Q 45 38 50 38 Q 55 38 55 45" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Keyhole -->
+      <circle cx="50" cy="53" r="1.5" fill="white"/>
+      <rect x="49.5" y="55" width="1" height="3" fill="white"/>
+    </g>
+
+    <!-- Accent Line with Glow -->
+    <line x1="30" y1="52" x2="70" y2="52" stroke="url(#logoGrad2)" stroke-width="1.5" opacity="0.8" filter="url(#glow2)"/>
+  </g>
+
+  <!-- Text: Ehacking School -->
+  <text x="100" y="45" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937" 
+        letter-spacing="0.5">Ehacking</text>
+  <text x="100" y="65" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2563eb">School</text>
+
+  <!-- Tagline -->
+  <text x="100" y="82" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" letter-spacing="0.3">
+    Master Ethical Hacking & Cybersecurity
+  </text>
+
+  <!-- Decorative Elements -->
+  <circle cx="55" cy="35" r="2" fill="#dc2626" opacity="0.7" filter="url(#glow2)"/>
+  <circle cx="65" cy="50" r="1.5" fill="#2563eb" opacity="0.6" filter="url(#glow2)"/>
+  <circle cx="35" cy="65" r="1.5" fill="#2563eb" opacity="0.5" filter="url(#glow2)"/>
+
+  <!-- Bottom accent line -->
+  <line x1="100" y1="90" x2="395" y2="90" stroke="#2563eb" stroke-width="2" opacity="0.3"/>
+</svg>

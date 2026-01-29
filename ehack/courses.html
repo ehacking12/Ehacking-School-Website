@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Ehacking School</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="learning-paths.html">Learning Paths</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="signin.html" class="btn-dashboard">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Courses</h1>
+            <p>Discover a wide range of cybersecurity courses designed for all levels</p>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="container">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h2>Find Your Course</h2>
+                <div class="filters">
+                    <select id="levelFilter" onchange="filterCourses()" class="filter-select">
+                        <option value="">All Levels</option>
+                        <option value="beginner">🟢 Beginner</option>
+                        <option value="intermediate">🟡 Intermediate</option>
+                        <option value="advanced">🔴 Advanced</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="courses-grid">
+                <!-- Beginner Course 1 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image-wrapper">
+                        <img src="images/cybersecurity.svg" alt="Cybersecurity Fundamentals">
+                        <div class="level-badge beginner-badge">🟢 Beginner</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <p>Introduction to cybersecurity concepts, threats, and basic defense strategies.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(428 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 8 weeks</span>
+                            <span>⏱️ 15 hours</span>
+                            <span>👥 5.2K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$49.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beginner Course 2 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image-wrapper">
+                        <img src="images/network-security.svg" alt="Network Security Fundamentals">
+                        <div class="level-badge beginner-badge">🟢 Beginner</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Network Security Fundamentals</h3>
+                        <p>Learn networking basics, protocols, firewalls, and network defense mechanisms.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(356 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 10 weeks</span>
+                            <span>⏱️ 20 hours</span>
+                            <span>👥 4.8K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$59.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Course 1 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image-wrapper">
+                        <img src="images/penetration-testing.svg" alt="Ethical Hacking Essentials">
+                        <div class="level-badge intermediate-badge">🟡 Intermediate</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Ethical Hacking Essentials</h3>
+                        <p>Learn methodologies and tools used by ethical hackers to identify vulnerabilities.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(892 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 12 weeks</span>
+                            <span>⏱️ 30 hours</span>
+                            <span>👥 12.5K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$79.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Course 2 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image-wrapper">
+                        <img src="images/web-security.svg" alt="Web Application Security">
+                        <div class="level-badge intermediate-badge">🟡 Intermediate</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Web Application Security</h3>
+                        <p>Master OWASP Top 10, SQL injection, XSS, CSRF, and secure coding practices.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(756 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 10 weeks</span>
+                            <span>⏱️ 25 hours</span>
+                            <span>👥 10.3K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$74.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Course 1 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image-wrapper">
+                        <img src="images/penetration-testing.svg" alt="Penetration Testing Mastery">
+                        <div class="level-badge advanced-badge">🔴 Advanced</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Penetration Testing Mastery</h3>
+                        <p>Advanced penetration testing techniques and real-world scenario simulations.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(1243 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 14 weeks</span>
+                            <span>⏱️ 40 hours</span>
+                            <span>👥 18.7K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$99.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Course 2 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image-wrapper">
+                        <img src="images/cybersecurity.svg" alt="Incident Response & Forensics">
+                        <div class="level-badge advanced-badge">🔴 Advanced</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Incident Response & Forensics</h3>
+                        <p>Handle security incidents, investigate breaches, and perform digital forensics.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(987 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 12 weeks</span>
+                            <span>⏱️ 35 hours</span>
+                            <span>👥 14.2K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$89.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Course 3 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image-wrapper">
+                        <img src="images/network-security.svg" alt="Cloud Security">
+                        <div class="level-badge intermediate-badge">🟡 Intermediate</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cloud Security Essentials</h3>
+                        <p>Secure AWS, Azure, and GCP cloud environments. Learn cloud-native security.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(654 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 10 weeks</span>
+                            <span>⏱️ 28 hours</span>
+                            <span>👥 8.9K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$69.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Course 4 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image-wrapper">
+                        <img src="images/cybersecurity.svg" alt="Cryptography Basics">
+                        <div class="level-badge beginner-badge">🟢 Beginner</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cryptography Basics</h3>
+                        <p>Understand encryption, hashing, digital signatures, and cryptographic algorithms.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(512 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 8 weeks</span>
+                            <span>⏱️ 18 hours</span>
+                            <span>👥 6.1K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$54.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Course 5 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image-wrapper">
+                        <img src="images/penetration-testing.svg" alt="Advanced Malware Analysis">
+                        <div class="level-badge advanced-badge">🔴 Advanced</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Malware Analysis</h3>
+                        <p>Deep dive into malware reverse engineering and static/dynamic analysis techniques.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(823 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 16 weeks</span>
+                            <span>⏱️ 45 hours</span>
+                            <span>👥 11.4K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$109.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Course 6 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image-wrapper">
+                        <img src="images/network-security.svg" alt="Linux System Administration">
+                        <div class="level-badge beginner-badge">🟢 Beginner</div>
+                        <div class="course-overlay">
+                            <button class="preview-btn">Preview Course</button>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Linux System Administration</h3>
+                        <p>Master Linux fundamentals, user management, networking, and security hardening.</p>
+                        <div class="course-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(678 reviews)</span>
+                        </div>
+                        <div class="course-meta">
+                            <span>📅 10 weeks</span>
+                            <span>⏱️ 22 hours</span>
+                            <span>👥 7.3K students</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">$59.99</span>
+                            <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <section class="courses-cta">
+                <h2>Didn't find what you're looking for?</h2>
+                <p>Our expert instructors can create custom corporate training programs tailored to your organization's
+                    needs.</p>
+                <a href="contact.html" class="btn btn-primary">Request Custom Training</a>
+            </section>
+        </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ehacking School. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

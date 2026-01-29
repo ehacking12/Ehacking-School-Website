@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cyberGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#darkGrad)"/>
+  
+  <!-- Grid Background -->
+  <g stroke="#00ffff" stroke-width="1" opacity="0.2">
+    <line x1="0" y1="0" x2="0" y2="600"/>
+    <line x1="80" y1="0" x2="80" y2="600"/>
+    <line x1="160" y1="0" x2="160" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/>
+    <line x1="320" y1="0" x2="320" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+    <line x1="560" y1="0" x2="560" y2="600"/>
+    <line x1="640" y1="0" x2="640" y2="600"/>
+    <line x1="720" y1="0" x2="720" y2="600"/>
+    <line x1="800" y1="0" x2="800" y2="600"/>
+    
+    <line x1="0" y1="0" x2="800" y2="0"/>
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="0" y1="420" x2="800" y2="420"/>
+    <line x1="0" y1="480" x2="800" y2="480"/>
+    <line x1="0" y1="540" x2="800" y2="540"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+  </g>
+  
+  <!-- Flowing Data Streams -->
+  <path d="M -50 100 L 50 150 L 150 140 L 250 160 L 350 130 L 450 170 L 550 140 L 650 160 L 750 130 L 850 160" 
+        fill="none" stroke="#00ff88" stroke-width="2" opacity="0.6" filter="url(#cyberGlow)"/>
+  <path d="M -50 250 L 50 280 L 150 260 L 250 290 L 350 270 L 450 300 L 550 270 L 650 290 L 750 270 L 850 290" 
+        fill="none" stroke="#00ffff" stroke-width="2" opacity="0.6" filter="url(#cyberGlow)"/>
+  <path d="M -50 400 L 50 420 L 150 400 L 250 430 L 350 410 L 450 440 L 550 410 L 650 430 L 750 410 L 850 440" 
+        fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.6" filter="url(#cyberGlow)"/>
+  
+  <!-- Nodes -->
+  <circle cx="100" cy="150" r="6" fill="#00ff88" filter="url(#cyberGlow)" opacity="0.8"/>
+  <circle cx="200" cy="280" r="5" fill="#00ffff" filter="url(#cyberGlow)" opacity="0.8"/>
+  <circle cx="350" cy="420" r="7" fill="#ff00ff" filter="url(#cyberGlow)" opacity="0.8"/>
+  <circle cx="500" cy="170" r="6" fill="#00ff88" filter="url(#cyberGlow)" opacity="0.8"/>
+  <circle cx="650" cy="290" r="5" fill="#00ffff" filter="url(#cyberGlow)" opacity="0.8"/>
+  <circle cx="750" cy="410" r="6" fill="#ff00ff" filter="url(#cyberGlow)" opacity="0.8"/>
+  
+  <!-- Connecting Lines -->
+  <line x1="100" y1="150" x2="200" y2="280" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
+  <line x1="200" y1="280" x2="350" y2="420" stroke="#00ffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="350" y1="420" x2="500" y2="170" stroke="#ff00ff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="500" y1="170" x2="650" y2="290" stroke="#00ff88" stroke-width="1.5" opacity="0.4"/>
+  <line x1="650" y1="290" x2="750" y2="410" stroke="#00ffff" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Text Overlay -->
+  <text x="400" y="550" font-family="monospace" font-size="24" fill="#00ff88" text-anchor="middle" opacity="0.7">NETWORK INTELLIGENCE</text>
+</svg>

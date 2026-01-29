@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehacking School - Learn Ethical Hacking & Cybersecurity</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="learning-paths.html">Learning Paths</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="signin.html" class="btn-dashboard">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-slide active">
+                <img src="images/cyber-advanced.svg" alt="Cybersecurity">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/cyber-network.svg" alt="Network Intelligence">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/cyber-threat.svg" alt="Threat Detection">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/cyber-encryption.svg" alt="Encryption Protocol">
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1>Master Ethical Hacking & Cybersecurity</h1>
+            <p>Learn from industry experts and secure your future in cybersecurity</p>
+            <div class="hero-buttons">
+                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                <a href="signin.html" class="btn btn-secondary">Sign Up Now</a>
+            </div>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <section class="featured-courses">
+        <div class="container">
+            <h2>Featured Courses</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="images/network-security.svg" alt="Network Security">
+                    <h3>Network Security Fundamentals</h3>
+                    <p>Learn the basics of network security, protocols, and defensive strategies.</p>
+                    <a href="courses.html" class="btn-link">Learn More →</a>
+                </div>
+                <div class="course-card">
+                    <img src="images/penetration-testing.svg" alt="Penetration Testing">
+                    <h3>Penetration Testing Basics</h3>
+                    <p>Master the skills needed to identify and exploit vulnerabilities ethically.</p>
+                    <a href="courses.html" class="btn-link">Learn More →</a>
+                </div>
+                <div class="course-card">
+                    <img src="images/web-security.svg" alt="Web Security">
+                    <h3>Web Application Security</h3>
+                    <p>Understand common web vulnerabilities and how to prevent them.</p>
+                    <a href="courses.html" class="btn-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Active Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Expert Instructors</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Professional Courses</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Student Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognitions Section -->
+    <section class="awards-section">
+        <div class="container">
+            <h2>Awards & Recognition</h2>
+            <p class="section-subtitle">Recognized by industry leaders and educational organizations worldwide</p>
+            <div class="awards-grid">
+                <!-- Platinum Award -->
+                <div class="award-badge platinum">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">⭐</div>
+                    <h3>Platinum Partner</h3>
+                    <p>International Cybersecurity Alliance 2025</p>
+                </div>
+
+                <!-- Gold Award -->
+                <div class="award-badge gold">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">🏆</div>
+                    <h3>Gold Excellence</h3>
+                    <p>Best Online Security Training 2024</p>
+                </div>
+
+                <!-- Silver Award -->
+                <div class="award-badge silver">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">🥈</div>
+                    <h3>Silver Innovation</h3>
+                    <p>Educational Technology Award 2024</p>
+                </div>
+
+                <!-- Bronze Award -->
+                <div class="award-badge bronze">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">🥉</div>
+                    <h3>Bronze Achievement</h3>
+                    <p>Industry Learning Platform 2024</p>
+                </div>
+
+                <!-- ISO Certification -->
+                <div class="award-badge iso">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">✓</div>
+                    <h3>ISO 27001</h3>
+                    <p>Information Security Certified</p>
+                </div>
+
+                <!-- GDPR Certified -->
+                <div class="award-badge gdpr">
+                    <div class="award-ribbon"></div>
+                    <div class="award-icon">🔒</div>
+                    <h3>GDPR Compliant</h3>
+                    <p>Data Protection Compliance 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Ehacking School?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with 10+ years of cybersecurity experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Hands-On Training</h3>
+                    <p>Practice with real-world scenarios and secure lab environments</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Industry Certifications</h3>
+                    <p>Earn recognized certificates that boost your career prospects</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Career Support</h3>
+                    <p>Get job placement assistance and career guidance from our team</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Community</h3>
+                    <p>Connect with thousands of cybersecurity professionals worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Access all course materials forever with regular updates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Ehacking School transformed my career! The instructors are knowledgeable and the courses are
+                        incredibly practical. I got hired within 3 months of completing my course!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <small>Security Analyst at Tech Corp</small>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The hands-on labs were exactly what I needed. I went from beginner to understanding complex
+                        security concepts. Highly recommended for anyone serious about cybersecurity!"</p>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <small>Penetration Tester</small>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best investment I made in my career. The course structure is logical, instructors are
+                        responsive, and the community support is amazing. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <strong>Emma Davis</strong>
+                        <small>Security Operations Manager</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Trusted By Leading Organizations</h2>
+            <div class="trust-badges">
+                <div class="badge">✓ ISO 27001 Certified</div>
+                <div class="badge">✓ GDPR Compliant</div>
+                <div class="badge">✓ SOC 2 Verified</div>
+                <div class="badge">✓ Award Winning Platform</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Join thousands of students learning cybersecurity</p>
+            <a href="signin.html" class="cta-button pulse">Start Learning Today</a>
+        </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ehacking School. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

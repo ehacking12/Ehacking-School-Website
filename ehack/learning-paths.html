@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths - Ehacking School</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="learning-paths.html" class="active">Learning Paths</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="dashboard.html" class="btn-dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Learning Paths</h1>
+            <p>Structured learning journeys designed for your cybersecurity career</p>
+        </div>
+    </section>
+
+    <section class="learning-paths-section">
+        <div class="container">
+            <!-- Introduction -->
+            <section class="paths-intro">
+                <h2>Choose Your Learning Path</h2>
+                <p>Our structured learning paths are designed by industry experts to take you from beginner to expert.
+                    Each path includes hands-on labs, real-world projects, and industry certifications.</p>
+            </section>
+
+            <!-- Paths Grid -->
+            <div class="paths-grid">
+                <!-- Beginner Path -->
+                <div class="path-card">
+                    <div class="path-badge">Beginner</div>
+                    <div class="path-number">1</div>
+                    <h2>🚀 Beginner Path</h2>
+                    <p class="path-description">Perfect for those starting their cybersecurity journey</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>6</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>24</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>85</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ Cybersecurity Fundamentals</li>
+                            <li>✓ Network Security Basics</li>
+                            <li>✓ Linux System Administration</li>
+                            <li>✓ Cryptography Fundamentals</li>
+                            <li>✓ System Hardening</li>
+                            <li>✓ Security Best Practices</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 Beginner Security Specialist</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+
+                <!-- Ethical Hacker Path -->
+                <div class="path-card featured">
+                    <div class="path-badge featured-badge">Most Popular</div>
+                    <div class="path-number">2</div>
+                    <h2>⚡ Ethical Hacker Path</h2>
+                    <p class="path-description">Build skills to become a certified ethical hacker</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>8</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>28</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>112</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ Ethical Hacking Essentials</li>
+                            <li>✓ Penetration Testing Basics</li>
+                            <li>✓ Vulnerability Assessment</li>
+                            <li>✓ Social Engineering & OSINT</li>
+                            <li>✓ Exploitation Techniques</li>
+                            <li>✓ Post-Exploitation</li>
+                            <li>✓ CEH Exam Prep</li>
+                            <li>✓ Real-World Projects</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 Certified Ethical Hacker (CEH)</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+
+                <!-- Web Security Path -->
+                <div class="path-card">
+                    <div class="path-badge">Intermediate</div>
+                    <div class="path-number">3</div>
+                    <h2>🌐 Web Security Path</h2>
+                    <p class="path-description">Master web application security and defense</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>7</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>20</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>95</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ Web Application Security</li>
+                            <li>✓ OWASP Top 10 Deep Dive</li>
+                            <li>✓ Secure Coding Practices</li>
+                            <li>✓ API Security</li>
+                            <li>✓ Web Penetration Testing</li>
+                            <li>✓ Burp Suite Mastery</li>
+                            <li>✓ Capstone Project</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 Web Security Specialist</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+
+                <!-- Advanced Defense Path -->
+                <div class="path-card">
+                    <div class="path-badge">Advanced</div>
+                    <div class="path-number">4</div>
+                    <h2>🛡️ Advanced Defense Path</h2>
+                    <p class="path-description">Expert-level defensive security strategies</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>9</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>32</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>128</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ Advanced Intrusion Detection</li>
+                            <li>✓ Incident Response & Forensics</li>
+                            <li>✓ Threat Hunting</li>
+                            <li>✓ Security Architecture</li>
+                            <li>✓ SIEM Implementation</li>
+                            <li>✓ Malware Analysis</li>
+                            <li>✓ Compliance & Risk Management</li>
+                            <li>✓ Enterprise Security</li>
+                            <li>✓ Capstone Project</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 CISSP Preparation + Specialization</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+
+                <!-- Cloud Security Path -->
+                <div class="path-card">
+                    <div class="path-badge">Intermediate</div>
+                    <div class="path-number">5</div>
+                    <h2>☁️ Cloud Security Path</h2>
+                    <p class="path-description">Secure cloud infrastructure and applications</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>7</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>22</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>98</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ Cloud Security Fundamentals</li>
+                            <li>✓ AWS Security</li>
+                            <li>✓ Azure Security</li>
+                            <li>✓ GCP Security</li>
+                            <li>✓ Container Security</li>
+                            <li>✓ Kubernetes Security</li>
+                            <li>✓ Cloud Compliance</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 Cloud Security Specialist</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+
+                <!-- DevSecOps Path -->
+                <div class="path-card">
+                    <div class="path-badge">Advanced</div>
+                    <div class="path-number">6</div>
+                    <h2>⚙️ DevSecOps Path</h2>
+                    <p class="path-description">Integrate security into development pipelines</p>
+                    <div class="path-content">
+                        <div class="path-stats">
+                            <div class="stat">
+                                <strong>8</strong>
+                                <span>Courses</span>
+                            </div>
+                            <div class="stat">
+                                <strong>26</strong>
+                                <span>Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <strong>105</strong>
+                                <span>Hours</span>
+                            </div>
+                        </div>
+                        <h3>Course Sequence:</h3>
+                        <ul class="course-list">
+                            <li>✓ DevSecOps Fundamentals</li>
+                            <li>✓ Secure Coding Practices</li>
+                            <li>✓ CI/CD Security</li>
+                            <li>✓ Infrastructure as Code Security</li>
+                            <li>✓ Container Security</li>
+                            <li>✓ Vulnerability Management</li>
+                            <li>✓ Threat Modeling</li>
+                            <li>✓ Capstone Project</li>
+                        </ul>
+                        <div class="path-footer">
+                            <span class="certification">📜 Certified DevSecOps Engineer</span>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Path Comparison -->
+            <section class="path-comparison">
+                <h2>Compare Learning Paths</h2>
+                <div class="comparison-table">
+                    <div class="table-header">
+                        <div class="table-cell">Path</div>
+                        <div class="table-cell">Duration</div>
+                        <div class="table-cell">Difficulty</div>
+                        <div class="table-cell">Certification</div>
+                        <div class="table-cell">Best For</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Beginner</strong></div>
+                        <div class="table-cell">24 weeks</div>
+                        <div class="table-cell">Beginner</div>
+                        <div class="table-cell">Security Specialist</div>
+                        <div class="table-cell">Career starters</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Ethical Hacker</strong></div>
+                        <div class="table-cell">28 weeks</div>
+                        <div class="table-cell">Intermediate</div>
+                        <div class="table-cell">Certified Ethical Hacker</div>
+                        <div class="table-cell">Penetration testers</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Web Security</strong></div>
+                        <div class="table-cell">20 weeks</div>
+                        <div class="table-cell">Intermediate</div>
+                        <div class="table-cell">Web Security Specialist</div>
+                        <div class="table-cell">Web developers</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Advanced Defense</strong></div>
+                        <div class="table-cell">32 weeks</div>
+                        <div class="table-cell">Advanced</div>
+                        <div class="table-cell">CISSP Prep</div>
+                        <div class="table-cell">Security leaders</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Cloud Security</strong></div>
+                        <div class="table-cell">22 weeks</div>
+                        <div class="table-cell">Intermediate</div>
+                        <div class="table-cell">Cloud Security Specialist</div>
+                        <div class="table-cell">Cloud architects</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>DevSecOps</strong></div>
+                        <div class="table-cell">26 weeks</div>
+                        <div class="table-cell">Intermediate</div>
+                        <div class="table-cell">DevSecOps Engineer</div>
+                        <div class="table-cell">Software engineers</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Path Benefits -->
+            <section class="path-benefits">
+                <h2>Benefits of Our Learning Paths</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📚</div>
+                        <h3>Structured Learning</h3>
+                        <p>Courses are carefully sequenced to build knowledge progressively from fundamentals to
+                            advanced concepts.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Clear Goals</h3>
+                        <p>Each path has well-defined learning outcomes and industry-recognized certifications.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">👥</div>
+                        <h3>Community Support</h3>
+                        <p>Connect with fellow learners, get help from instructors, and build your professional network.
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💼</div>
+                        <h3>Career Ready</h3>
+                        <p>Upon completion, you'll have portfolio projects and certifications to showcase to employers.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="paths-cta">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Choose a learning path and begin transforming your cybersecurity career today</p>
+                <div class="cta-buttons">
+                    <a href="signin.html" class="btn btn-primary">Start Learning Today</a>
+                    <a href="contact.html" class="btn btn-secondary">Need Guidance?</a>
+                </div>
+            </section>
+        </div>
+    </section>
+    </div>
+    <a href="#" class="btn btn-primary">Start Path</a>
+    </div>
+    </div>
+
+    <div class="progression-info">
+        <h2>Your Learning Journey</h2>
+        <div class="progression-steps">
+            <div class="step">
+                <h3>1. Choose a Path</h3>
+                <p>Select a learning path that matches your goals</p>
+            </div>
+            <div class="step">
+                <h3>2. Complete Courses</h3>
+                <p>Work through structured courses at your own pace</p>
+            </div>
+            <div class="step">
+                <h3>3. Hands-on Labs</h3>
+                <p>Practice with real-world scenarios and labs</p>
+            </div>
+            <div class="step">
+                <h3>4. Get Certified</h3>
+                <p>Earn industry-recognized certifications</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ehacking School. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

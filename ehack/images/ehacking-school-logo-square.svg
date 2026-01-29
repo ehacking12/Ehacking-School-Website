@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="logoShadow2">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" fill="#f8f9fa" rx="20"/>
+
+  <!-- Circular Badge Background -->
+  <circle cx="100" cy="80" r="65" fill="url(#logoGrad3)" filter="url(#logoShadow2)"/>
+
+  <!-- Inner Circle -->
+  <circle cx="100" cy="80" r="60" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+
+  <!-- Shield Icon (Large) -->
+  <g filter="url(#logoShadow2)">
+    <!-- Main Shield -->
+    <path d="M 100 40 L 100 40 L 65 65 L 65 100 Q 65 135 100 155 Q 135 135 135 100 L 135 65 Z" 
+          fill="white" stroke="white" stroke-width="1.5" opacity="0.95"/>
+    
+    <!-- Gradient Overlay on Shield -->
+    <path d="M 100 45 L 68 68 L 68 100 Q 68 132 100 150 Q 132 132 132 100 L 132 68 Z" 
+          fill="none" stroke="url(#logoGrad3)" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Lock Icon Inside Shield -->
+    <g>
+      <!-- Lock Body -->
+      <rect x="85" y="90" width="30" height="35" rx="4" fill="none" stroke="url(#logoGrad3)" stroke-width="2.5"/>
+      <!-- Lock Shackle -->
+      <path d="M 88 90 Q 88 72 100 72 Q 112 72 112 90" fill="none" stroke="url(#logoGrad3)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Keyhole -->
+      <circle cx="100" cy="107" r="3" fill="url(#logoGrad3)"/>
+      <rect x="98" y="111" width="4" height="8" fill="url(#logoGrad3)" rx="2"/>
+    </g>
+
+    <!-- Accent Red Line -->
+    <line x1="65" y1="95" x2="135" y2="95" stroke="url(#logoGrad4)" stroke-width="2" opacity="0.7" filter="url(#glow3)"/>
+  </g>
+
+  <!-- Tech Accent Dots -->
+  <circle cx="110" cy="55" r="3" fill="#dc2626" opacity="0.8" filter="url(#glow3)"/>
+  <circle cx="140" cy="80" r="2" fill="#2563eb" opacity="0.6" filter="url(#glow3)"/>
+  <circle cx="60" cy="110" r="2.5" fill="#2563eb" opacity="0.7" filter="url(#glow3)"/>
+
+  <!-- Text -->
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937" 
+        text-anchor="middle" letter-spacing="0.5">EHACKING SCHOOL</text>
+
+  <!-- Bottom accent -->
+  <line x1="50" y1="190" x2="150" y2="190" stroke="#2563eb" stroke-width="2" opacity="0.4"/>
+</svg>

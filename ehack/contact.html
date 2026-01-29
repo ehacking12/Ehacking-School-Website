@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ehacking School</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="learning-paths.html">Learning Paths</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="signin.html" class="btn-dashboard">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with the Ehacking School team</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <!-- Contact Grid -->
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <p class="form-intro">Have a question about our courses or services? Fill out the form below and our
+                        team will get back to you within 24 hours.</p>
+                    <form id="contactForm" class="contact-form" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+250 794 518 532">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Course inquiry" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Inquiry Type *</label>
+                            <select id="category" name="category" required>
+                                <option value="">-- Select a category --</option>
+                                <option value="course">Course Information</option>
+                                <option value="corporate">Corporate Training</option>
+                                <option value="support">Technical Support</option>
+                                <option value="certification">Certification Questions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us more about your inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <!-- Note: reCAPTCHA v3 integration via api.js -->
+                        <!-- Make sure to update RECAPTCHA_SITE_KEY in .env -->
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+
+                <!-- Contact Information Sidebar -->
+                <div class="contact-info">
+                    <h2>Quick Contact</h2>
+
+                    <!-- Email -->
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:ehackingschool5@gmail.com" class="info-link">ehackingschool5@gmail.com</a>
+                        </p>
+                        <p class="info-desc">Average response time: 24 hours</p>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:+250794518532" class="info-link">+250 794 518 532</a></p>
+                        <p class="info-desc">Monday - Friday: 9AM - 6PM EST</p>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="info-item">
+                        <div class="info-icon">💚</div>
+                        <h3>WhatsApp Us</h3>
+                        <p><a href="https://wa.me/250794518532" class="info-link" target="_blank">Message on
+                                WhatsApp</a></p>
+                        <p class="info-desc">Quick support via WhatsApp</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>123 Security Lane</p>
+                        <p>Kigali Gasabo, RN2030P</p>
+                        <p class="info-desc">Rwanda Kigali</p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="info-item">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="https://twitter.com" class="social-link" title="Twitter">𝕏</a>
+                            <a href="https://linkedin.com" class="social-link" title="LinkedIn">in</a>
+                            <a href="https://facebook.com" class="social-link" title="Facebook">f</a>
+                            <a href="https://youtube.com" class="social-link" title="YouTube">▶</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Options -->
+            <section class="support-options">
+                <h2>Support Options</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Chat with our support team in real-time for immediate assistance.</p>
+                        <a href="#" class="support-link">Start Chat →</a>
+                    </div>
+                    <div class="support-card">
+                        <div class="support-icon">📚</div>
+                        <h3>Knowledge Base</h3>
+                        <p>Browse our extensive FAQ and tutorials for self-service support.</p>
+                        <a href="#" class="support-link">Browse KB →</a>
+                    </div>
+                    <div class="support-card">
+                        <div class="support-icon">🎓</div>
+                        <h3>Community Forum</h3>
+                        <p>Connect with other learners and get advice from the community.</p>
+                        <a href="#" class="support-link">Join Forum →</a>
+                    </div>
+                    <div class="support-card">
+                        <div class="support-icon">📞</div>
+                        <h3>Dedicated Support</h3>
+                        <p>For enterprise clients, we offer dedicated account management.</p>
+                        <a href="#" class="support-link">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="contact-team">
+                <h2>Meet Our Support Team</h2>
+                <p>Our dedicated team is here to help you succeed</p>
+                <div class="team-contacts-grid">
+                    <div class="team-contact-card">
+                        <div class="team-avatar">👨‍💼</div>
+                        <h3>John Smith</h3>
+                        <p class="role">General Inquiries Manager</p>
+                        <p class="email"><a href="mailto:john@ehackingschool.com">john@ehackingschool.com</a></p>
+                    </div>
+                    <div class="team-contact-card">
+                        <div class="team-avatar">👩‍💼</div>
+                        <h3>Sarah Johnson</h3>
+                        <p class="role">Course & Enrollment Support</p>
+                        <p class="email"><a href="mailto:sarah@ehackingschool.com">sarah@ehackingschool.com</a></p>
+                    </div>
+                    <div class="team-contact-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3>Mike Chen</h3>
+                        <p class="role">Technical Support Specialist</p>
+                        <p class="email"><a href="mailto:mike@ehackingschool.com">mike@ehackingschool.com</a></p>
+                    </div>
+                    <div class="team-contact-card">
+                        <div class="team-avatar">👩‍💻</div>
+                        <h3>Emily Davis</h3>
+                        <p class="role">Corporate Training Manager</p>
+                        <p class="email"><a href="mailto:emily@ehackingschool.com">emily@ehackingschool.com</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="contact-faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How long does it take to get a response?</h3>
+                        <p>We typically respond to all inquiries within 24 business hours. For urgent matters, call us
+                            directly at +250 794 518 532.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer corporate training?</h3>
+                        <p>Yes! We offer customized corporate training programs. Select "Corporate Training" in the form
+                            or call our corporate team for details.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is your refund policy?</h3>
+                        <p>We offer a 30-day money-back guarantee if you're not satisfied with your course. No questions
+                            asked!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I get technical support?</h3>
+                        <p>Email us at ehackingschool5@gmail.com or use our live chat. Our technical team will assist
+                            you promptly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are certifications internationally recognized?</h3>
+                        <p>Yes, our certifications are recognized globally. They're based on industry-standard curricula
+                            (CEH, OSCP, GPEN).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I access courses indefinitely?</h3>
+                        <p>Absolutely! You get lifetime access to all course materials, including future updates, for
+                            one low price.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    </div>
+
+    <div class="info-item">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="courses.html">Browse Courses</a></li>
+            <li><a href="learning-paths.html">View Learning Paths</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+    </div>
+    </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>How do I enroll in a course?</h3>
+                <p>Navigate to the Courses page, select your course, and click "Enroll Now". You'll be guided
+                    through the registration process.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept all major credit cards, PayPal, and bank transfers. Contact us for more payment
+                    options.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer refunds?</h3>
+                <p>Yes, we offer 30-day money-back guarantee if you're not satisfied with the course.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are certificates provided?</h3>
+                <p>Yes, upon successful completion of any course, you'll receive a recognized certificate of
+                    completion.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ehacking School. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

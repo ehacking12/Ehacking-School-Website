@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - Ehacking School</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="learning-paths.html">Learning Paths</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="signin.html" class="active btn-dashboard">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-box">
+                <div class="auth-header">
+                    <h1>Welcome to Ehacking School</h1>
+                    <p>Master cybersecurity and ethical hacking</p>
+                </div>
+
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" onclick="switchTab('signin')">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    <button class="auth-tab-btn" onclick="switchTab('signup')">
+                        <i class="fas fa-user-plus"></i> Sign Up
+                    </button>
+                </div>
+
+                <!-- Sign In Form -->
+                <div id="signin" class="auth-form active-form">
+                    <form onsubmit="handleSignIn(event)">
+                        <button type="button" class="btn btn-full google-signin-btn"
+                            onclick="handleSocialAuth('google')">
+                            <i class="fab fa-google"></i> Sign In with Google
+                        </button>
+
+                        <div class="auth-divider">
+                            <span>Or use your account</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signin-email">
+                                <i class="fas fa-envelope"></i> Gmail Address
+                            </label>
+                            <input type="email" id="signin-email" name="email" placeholder="yourname@gmail.com"
+                                pattern=".*@gmail\.com$" title="Please use a valid Gmail address" required>
+                            <span class="error-message" id="signin-email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signin-password">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <input type="password" id="signin-password" name="password" placeholder="••••••••" required>
+                            <span class="error-message" id="signin-password-error"></span>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Keep me signed in</label>
+                        </div>
+
+                        <!-- reCAPTCHA -->
+                        <!-- IMPORTANT: Replace data-sitekey with your actual reCAPTCHA v3 site key from https://www.google.com/recaptcha/admin -->
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE" data-action="signin"></div>
+                        <span class="error-message" id="signin-captcha-error"></span>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-lock-open"></i> Sign In Now
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p class="forgot-password">
+                            <a href="password-recovery.html">Forgot your password?</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div id="signup" class="auth-form">
+                    <form onsubmit="handleSignUp(event)">
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="signup-first-name">
+                                    <i class="fas fa-user"></i> First Name
+                                </label>
+                                <input type="text" id="signup-first-name" name="first-name" placeholder="John" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="signup-last-name">
+                                    Last Name
+                                </label>
+                                <input type="text" id="signup-last-name" name="last-name" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-email">
+                                <i class="fas fa-envelope"></i> Gmail Address
+                            </label>
+                            <input type="email" id="signup-email" name="email" placeholder="yourname@gmail.com"
+                                pattern=".*@gmail\.com$" title="Please use a valid Gmail address" required>
+                            <span class="error-message" id="signup-email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <div class="password-strength">
+                                <input type="password" id="signup-password" name="password" placeholder="••••••••"
+                                    required onchange="checkPasswordStrength()">
+                                <div class="strength-indicator">
+                                    <div class="strength-bar"></div>
+                                </div>
+                                <small class="strength-text"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password-confirm">
+                                <i class="fas fa-check-circle"></i> Confirm Password
+                            </label>
+                            <input type="password" id="signup-password-confirm" name="password-confirm"
+                                placeholder="••••••••" required>
+                            <span class="error-message" id="signup-password-confirm-error"></span>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                I agree to the <a href="terms-of-service.html">Terms & Conditions</a> and <a
+                                    href="privacy-policy.html">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- reCAPTCHA -->
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                            data-action="signup"></div>
+                        <span class="error-message" id="signup-captcha-error"></span>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-user-check"></i> Create My Account
+                        </button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>Or sign up with</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button class="social-btn google" onclick="handleSocialAuth('google')">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button class="social-btn github" onclick="handleSocialAuth('github')">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="social-btn microsoft" onclick="handleSocialAuth('microsoft')">
+                            <i class="fab fa-microsoft"></i> Microsoft
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Expert-Led Courses</h3>
+                    <p>Learn from industry professionals with years of experience</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Track Your Progress</h3>
+                    <p>Monitor your learning journey with detailed analytics</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Earn Certificates</h3>
+                    <p>Get recognized industry certifications upon completion</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Join Our Community</h3>
+                    <p>Connect with thousands of cybersecurity enthusiasts worldwide</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Hands-On Labs</h3>
+                    <p>Practice with real-world scenarios in secure environments</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help whenever you need it from our expert support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Ehacking School</h4>
+                    <p>Empowering learners with cybersecurity and ethical hacking knowledge</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="learning-paths.html">Learning Paths</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ehacking School. All rights reserved. | Built with <i class="fas fa-heart"
+                        style="color: #dc2626;"></i> for cybersecurity learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            const forms = document.querySelectorAll('.auth-form');
+            forms.forEach(form => form.classList.remove('active-form'));
+
+            const tabs = document.querySelectorAll('.auth-tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active-form');
+            event.target.closest('.auth-tab-btn').classList.add('active');
+        }
+
+        function checkPasswordStrength() {
+            const password = document.getElementById('signup-password').value;
+            const strengthBar = document.querySelector('.strength-bar');
+            const strengthText = document.querySelector('.strength-text');
+
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (password.length >= 12) strength++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+
+            const strengthLevels = ['', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+            const strengthColors = ['', '#dc2626', '#f97316', '#eab308', '#22c55e', '#16a34a'];
+
+            strengthBar.style.width = (strength / 5) * 100 + '%';
+            strengthBar.style.backgroundColor = strengthColors[strength];
+            strengthText.textContent = strengthLevels[strength];
+            strengthText.style.color = strengthColors[strength];
+        }
+
+        function handleSignIn(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            const captchaResponse = document.querySelector('#signin .g-recaptcha-response').value;
+
+            // Basic validation
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (!captchaResponse) {
+                document.getElementById('signin-captcha-error').textContent = '✓ Please complete the reCAPTCHA verification';
+                return;
+            }
+
+            // Show success message
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> Signing in...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert(`✓ Sign In successful!\nEmail: ${email}`);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('signup-first-name').value;
+            const lastName = document.getElementById('signup-last-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const passwordConfirm = document.getElementById('signup-password-confirm').value;
+            const terms = document.getElementById('terms').checked;
+            const captchaResponse = document.querySelector('#signup .g-recaptcha-response').value;
+
+            // Validation
+            if (!firstName || !lastName || !email || !password || !passwordConfirm) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (password !== passwordConfirm) {
+                document.getElementById('signup-password-confirm-error').textContent = 'Passwords do not match';
+                return;
+            }
+
+            if (!terms) {
+                alert('Please agree to Terms & Conditions');
+                return;
+            }
+
+            if (!captchaResponse) {
+                document.getElementById('signup-captcha-error').textContent = '✓ Please complete the reCAPTCHA verification';
+                return;
+            }
+
+            // Show success message
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert(`✓ Account created successfully!\nWelcome ${firstName} ${lastName}!`);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        function handleSocialAuth(provider) {
+            alert(`Signing in with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...\nThis will redirect to ${provider} OAuth`);
+            // Here you would implement actual OAuth flow
+        }
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

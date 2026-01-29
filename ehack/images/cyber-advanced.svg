@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#cyberGradient)"/>
+
+  <!-- Grid Pattern Background -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e40af" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Animated Circuit Lines -->
+  <line x1="50" y1="100" x2="250" y2="100" stroke="#00ff88" stroke-width="2" opacity="0.6" filter="url(#neon)"/>
+  <line x1="250" y1="100" x2="250" y2="300" stroke="#00ff88" stroke-width="2" opacity="0.6" filter="url(#neon)"/>
+  <line x1="250" y1="300" x2="500" y2="300" stroke="#00ff88" stroke-width="2" opacity="0.6" filter="url(#neon)"/>
+
+  <!-- Central Lock Icon -->
+  <g filter="url(#glow)">
+    <!-- Lock body -->
+    <rect x="300" y="200" width="200" height="180" rx="15" fill="none" stroke="#00ffff" stroke-width="3"/>
+    <!-- Lock shackle -->
+    <path d="M 350 200 Q 350 120 400 120 Q 450 120 450 200" fill="none" stroke="#00ffff" stroke-width="3"/>
+    <!-- Lock keyhole -->
+    <circle cx="400" cy="270" r="15" fill="none" stroke="#00ff00" stroke-width="2"/>
+    <rect x="395" y="285" width="10" height="25" fill="none" stroke="#00ff00" stroke-width="2"/>
+  </g>
+
+  <!-- Digital Code/Data Streams -->
+  <g font-family="monospace" font-size="14" fill="#00ff88" opacity="0.8" filter="url(#neon)">
+    <text x="50" y="450">1101001011</text>
+    <text x="200" y="480">10110011</text>
+    <text x="550" y="470">11010110</text>
+    <text x="650" y="500">101010</text>
+  </g>
+
+  <!-- Shield Icon -->
+  <g filter="url(#glow)">
+    <path d="M 600 150 L 700 180 L 700 300 Q 700 380 650 420 Q 600 380 600 300 Z" 
+          fill="none" stroke="#ff00ff" stroke-width="2.5"/>
+    <circle cx="650" cy="280" r="20" fill="none" stroke="#ff00ff" stroke-width="2"/>
+    <path d="M 650 265 L 650 295 M 635 280 L 665 280" stroke="#ff00ff" stroke-width="2"/>
+  </g>
+
+  <!-- Cyber Particles/Dots -->
+  <circle cx="150" cy="200" r="4" fill="#00ffff" opacity="0.7" filter="url(#neon)"/>
+  <circle cx="700" cy="150" r="3" fill="#00ff88" opacity="0.6" filter="url(#neon)"/>
+  <circle cx="100" cy="500" r="3" fill="#ff00ff" opacity="0.5" filter="url(#neon)"/>
+  <circle cx="750" cy="450" r="4" fill="#00ffff" opacity="0.7" filter="url(#neon)"/>
+  <circle cx="400" cy="500" r="3" fill="#00ff88" opacity="0.6" filter="url(#neon)"/>
+
+  <!-- Connecting Lines Between Elements -->
+  <line x1="150" y1="200" x2="300" y2="270" stroke="#00ffff" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+  <line x1="500" y1="300" x2="600" y2="250" stroke="#ff00ff" stroke-width="1" opacity="0.4" stroke-dasharray="5,5"/>
+
+  <!-- Digital Wave Effect -->
+  <path d="M 0 550 Q 100 520 200 550 T 400 550 T 600 550 T 800 550" 
+        fill="none" stroke="#00ff88" stroke-width="2" opacity="0.3"/>
+
+  <!-- Title Text -->
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="32" fill="#00ffff" 
+        text-anchor="middle" font-weight="bold" filter="url(#glow)">CYBERSECURITY</text>
+</svg>

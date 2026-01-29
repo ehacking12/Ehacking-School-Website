@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Dashboard - Ehacking School</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/ehacking-school-logo-icon.svg" alt="Ehacking School" class="logo-icon">
+                <span class="logo-text">Ehacking School</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="learning-paths.html">Learning Paths</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="notificationBtn" class="notification-btn" title="Notifications">🔔 <span
+                            id="notificationCount" class="badge"></span></button></li>
+                <li><a href="dashboard.html" class="active btn-dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Study Dashboard</h1>
+            <p>Your personalized learning companion</p>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-notice">
+                <h2>🚀 Coming Soon</h2>
+                <p>We're building an advanced study dashboard with the following features:</p>
+                <ul class="upcoming-features">
+                    <li>Track your course progress and completion rates</li>
+                    <li>Access personalized learning recommendations</li>
+                    <li>View your certificates and achievements</li>
+                    <li>Monitor your study time and statistics</li>
+                    <li>Schedule lessons and set study goals</li>
+                    <li>Participate in discussion forums</li>
+                    <li>Access your course notes and materials</li>
+                    <li>Connect with other learners</li>
+                </ul>
+            </div>
+
+            <div class="dashboard-preview">
+                <h2>Dashboard Preview</h2>
+                <div class="preview-grid">
+                    <div class="preview-card">
+                        <h3>📊 Progress Tracking</h3>
+                        <p>Monitor your progress across all courses with detailed analytics</p>
+                    </div>
+                    <div class="preview-card">
+                        <h3>🎯 Learning Goals</h3>
+                        <p>Set and track your learning objectives and milestones</p>
+                    </div>
+                    <div class="preview-card">
+                        <h3>📚 Resource Library</h3>
+                        <p>Organize and access all your course materials in one place</p>
+                    </div>
+                    <div class="preview-card">
+                        <h3>🏆 Achievements</h3>
+                        <p>Earn badges and display your certificates and accomplishments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p>Interested in beta testing the dashboard?</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Dropdown -->
+    <div id="notificationDropdown" class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="clearNotifications" class="clear-btn">Clear All</button>
+        </div>
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-message">No notifications</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ehacking School. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>
